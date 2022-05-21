@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernLog - Cadastrar Carga</title>
+</head>
+<body>
+	<div class="container mt-3">
+		<form th:object="${cargaDto}" action="/modernlog/cargas" method="POST">
+      		<div class="row">
+      			<div class="col-md-6">
+					<div class="input-group mb-3 input-group-sm">
+						<span class="input-group-text">Nota Fiscal: </span> 
+						<input type="text" th:field="*{notaFiscal}" class="form-control" minlength="44" maxlength="44" size="44" required>
+					</div>
+				</div>
+      		
+				<div class="col-md-6">
+					<div class="input-group mb-3 input-group-sm">
+						<span class="input-group-text">Descrição: </span> 
+						<input type="text" th:errorclass="is-invalid" th:field="*{descricao}" class="form-control" minlength="20" maxlength="50" size="50" required>
+						<div class="invalid-feedback" th:errors="*{descricao}"></div>
+					</div>
+				</div>
+			</div>
+			<input class="btn btn-success" type="submit" value="Cadastrar Carga"/>
+		</form>
+		
+		<a type="button" class="btn btn-primary" href='consultar'>Clique aqui para consultar as cargas já cadastradas</a>
+	</div>
+</body>
+</html>
