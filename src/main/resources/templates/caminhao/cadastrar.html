@@ -5,30 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ModernLog - Cadastrar Carga</title>
+    <title>ModernLog - Cadastrar Caminhão</title>
 </head>
 <body>
 	<div class="container mt-3">
-		<form th:object="${cargaDto}" action="/modernlog/cargas" method="POST">
+		<form th:object="${caminhaoDto}" action="/modernlog/caminhoes" method="POST">
       		<div class="row">
       			<div class="col-md-6">
 					<div class="input-group mb-3 input-group-sm">
-						<span class="input-group-text">Nota Fiscal: </span> 
-						<input type="text" th:field="*{notaFiscal}" class="form-control" minlength="44" maxlength="44" size="44" required>
+						<span class="input-group-text">Modelo: </span> 
+						<input type="text" th:field="*{modelo}" class="form-control" minlength="5" maxlength="30" required>
 					</div>
 				</div>
       		
 				<div class="col-md-6">
 					<div class="input-group mb-3 input-group-sm">
-						<span class="input-group-text">Descrição: </span> 
-						<input type="text" th:field="*{descricao}" class="form-control" minlength="20" maxlength="50" size="50" required>
+						<span class="input-group-text">Ano: </span> 
+						<input type="number" th:field="*{ano}" min="1000" max="9999" class="form-control" required>
 					</div>
 				</div>
 			</div>
-			<input class="btn btn-success" type="submit" value="Cadastrar Carga"/>
+			<input class="btn btn-success" type="submit" value="Cadastrar Caminhão"/>
 		</form>
 		
-		<a type="button" class="btn btn-primary" href='consultar'>Clique aqui para consultar as cargas já cadastradas</a>
+		<a type="button" class="btn btn-primary" href='consultar'>Clique aqui para consultar os caminhões já cadastrados</a>
 	</div>
 </body>
 </html>
