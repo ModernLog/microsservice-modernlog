@@ -1,0 +1,31 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernLog - Clientes Cadastrados</title>
+</head>
+<body>
+	<div class="container mt-3">
+		<h3>Consulta de Clientes</h3>
+		<table id="tbCarga" class="table table-bordered table-sm">
+			<thead>
+				<tr>
+					<th align="left">Razão Social</th>
+					<th align="left">CNPJ</th>
+					<th align="left">Telefone</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cliente : ${listarClientes}">
+					<td style="text-align:left" th:text="${cliente.getRazaoSocial()}">Razão Social</td>
+					<td style="text-align:left" th:text="${cliente.getCnpj()}">CNPJ</td>
+					<td style="text-align:left" th:text="${cliente.getTelefone()}">Telefone</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
