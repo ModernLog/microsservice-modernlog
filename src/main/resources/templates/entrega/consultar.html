@@ -20,5 +20,26 @@
         </ul>
       </nav>
     </header>
+    <main>
+      <h1>Consulta de Entrega</h1>
+      <table id="dados">
+        <tr>
+          <th align="left">Data Previsão</th>
+          <th align="left">Caminhão</th>
+          <th align="left">Carga</th>
+          <th align="left">Endereço</th>
+        </tr>
+        <tr th:each="entrega : ${listarEntregas}">
+          <td style="text-align:left" th:text="${entrega.getDataPrevisao()}">Data Previsão</td>
+          <td>TODO</td>
+          <td>TODO</td>
+          <td>TODO</td>
+        </tr>
+      </table>
+      <hr />
+      <a href="cadastrar" class="link-retorno">
+        <h4>Clique aqui para cadastrar um novo cliente</h4>
+      </a>
+    </main>
   </body>
 </html>

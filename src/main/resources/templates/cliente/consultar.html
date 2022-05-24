@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>ModernLog - Caminhões Cadastrados</title>
+    <title>ModernLog - Clientes Cadastrados</title>
   </head>
   <body>
     <header>
@@ -21,22 +20,22 @@
       </nav>
     </header>
     <main>
-      <h1>Consulta de Caminhões</h1>
+      <h1>Consulta de Clientes</h1>
       <table id="dados">
         <tr>
-          <th align="left">Modelo</th>
-          <th align="left">Placa</th>
-          <th align="left">Ano</th>
+          <th>Razão Social</th>
+          <th>CNPJ</th>
+          <th>Telefone</th>
         </tr>
-        <tr th:each="caminhao : ${listarCaminhoes}">
-          <td style="text-align:left" th:text="${caminhao.getModelo()}">Modelo</td>
-		  <td style="text-align:left" th:text="${caminhao.getPlaca()}">Placa</td>
-		  <td style="text-align:left" th:text="${caminhao.getAno()}">Ano</td>
-        </tr>
+        <tr th:each="cliente : ${listarClientes}">
+			<td style="text-align:left" th:text="${cliente.getRazaoSocial()}">Razão Social</td>
+			<td style="text-align:left" th:text="${cliente.getCnpj()}">CNPJ</td>
+			<td style="text-align:left" th:text="${cliente.getTelefone()}">Telefone</td>
+		</tr>
       </table>
       <hr />
       <a href="cadastrar" class="link-retorno">
-        <h4>Clique aqui para cadastrar um novo caminhão</h4>
+        <h4>Clique aqui para cadastrar um novo cliente</h4>
       </a>
     </main>
   </body>

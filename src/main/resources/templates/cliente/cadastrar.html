@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>ModernLog - Caminhões Cadastrados</title>
+    <title>ModernLog - Cadastrar Cliente</title>
   </head>
   <body>
     <header>
@@ -21,23 +21,23 @@
       </nav>
     </header>
     <main>
-      <h1>Consulta de Caminhões</h1>
-      <table id="dados">
-        <tr>
-          <th align="left">Modelo</th>
-          <th align="left">Placa</th>
-          <th align="left">Ano</th>
-        </tr>
-        <tr th:each="caminhao : ${listarCaminhoes}">
-          <td style="text-align:left" th:text="${caminhao.getModelo()}">Modelo</td>
-		  <td style="text-align:left" th:text="${caminhao.getPlaca()}">Placa</td>
-		  <td style="text-align:left" th:text="${caminhao.getAno()}">Ano</td>
-        </tr>
-      </table>
-      <hr />
-      <a href="cadastrar" class="link-retorno">
-        <h4>Clique aqui para cadastrar um novo caminhão</h4>
-      </a>
+      <h1>Cadastro de Cliente</h1>
+      <form th:object="${clienteDto}" action="/modernlog/clientes" method="POST">
+	      <div>
+	        <input th:field="*{razaoSocial}" type="text" placeholder="Razao Social" required/>
+	        <input th:field="*{cnpj}" type="text" placeholder="CNPJ" minlength="14" maxlength="14" required/>
+	        <input th:field="*{telefone}" type="text" placeholder="Telefone" minlength="11" maxlength="17" required/>
+	      </div>
+	      <hr />
+	      <div class="button-cadastrar">
+	        <input type="submit" value="Cadastrar Cliente" />
+	      </div>
+	      <a href="consultar" class="link-retorno">
+	        <h4>Clique aqui para consultar os clientes já cadastrados</h4>
+	      </a>
+	  </form>
     </main>
+
+    <footer></footer>
   </body>
 </html>

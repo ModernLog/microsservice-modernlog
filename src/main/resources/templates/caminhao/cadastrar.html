@@ -1,34 +1,41 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>ModernLog - Cadastrar Caminhão</title>
-</head>
-<body>
-	<div class="container mt-3">
-		<form th:object="${caminhaoDto}" action="/modernlog/caminhoes" method="POST">
-      		<div class="row">
-      			<div class="col-md-6">
-					<div class="input-group mb-3 input-group-sm">
-						<span class="input-group-text">Modelo: </span> 
-						<input type="text" th:field="*{modelo}" class="form-control" minlength="5" maxlength="30" required>
-					</div>
-				</div>
-      		
-				<div class="col-md-6">
-					<div class="input-group mb-3 input-group-sm">
-						<span class="input-group-text">Ano: </span> 
-						<input type="number" th:field="*{ano}" min="1000" max="9999" class="form-control" required>
-					</div>
-				</div>
-			</div>
-			<input class="btn btn-success" type="submit" value="Cadastrar Caminhão"/>
-		</form>
-		
-		<a type="button" class="btn btn-primary" href='consultar'>Clique aqui para consultar os caminhões já cadastrados</a>
-	</div>
-</body>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>ModernLog</li>
+          <li><a href="../../modernlog/entregas/cadastrar">Entrega</a></li>
+          <li><a href="../../modernlog/caminhoes/cadastrar">Caminhão</a></li>
+          <li><a href="../../modernlog/clientes/cadastrar">Cliente</a></li>
+          <li><a href="../../modernlog/cargas/cadastrar">Carga</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Cadastro de Caminhão</h1>
+      <form th:object="${caminhaoDto}" action="/modernlog/caminhoes" method="POST">
+	      <div>
+	        <input th:field="*{modelo}" type="text" placeholder="Modelo" minlength="5" maxlength="30" required/>
+	        <input th:field="*{placa}" type="text" placeholder="Placa" minlength="7" maxlength="10" required/>
+	        <input th:field="*{ano}" type="number" placeholder="Ano" min="1000" max="9999" required/>
+	      </div>
+	      <hr />
+	      <div class="button-cadastrar">
+	        <input type="submit" value="Cadastrar Caminhão" />
+	      </div>
+	      <a href="consultar" class="link-retorno">
+	        <h4>Clique aqui para consultar os caminhões já cadastrados</h4>
+	      </a>
+      </form>
+    </main>
+  </body>
 </html>
