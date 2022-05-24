@@ -46,7 +46,7 @@ public class CaminhaoController {
 	@PostMapping
 	public ModelAndView cadastrarCaminhao(@Valid CaminhaoDto caminhaoDto, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-//			return new ModelAndView("carga/cadastrar");
+			return new ModelAndView("caminhao/cadastrar");
 		}
 		
 		Caminhao consultaCaminhao = caminhaoRepository.findByModeloAndAno(caminhaoDto.getModelo(), caminhaoDto.getAno());

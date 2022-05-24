@@ -1,29 +1,41 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>ModernLog - Cargas Cadastradas</title>
-</head>
-<body>
-	<div class="container mt-3">
-		<h3>Consulta de Cargas</h3>
-		<table id="tbCarga" class="table table-bordered table-sm">
-			<thead>
-				<tr>
-					<th align= "left">Nota Fiscal</th>
-					<th align= "left">Descrição</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="carga : ${listarCargas}">
-					<td style="text-align:left" th:text="${carga.getNotaFiscal()}">Nota Fiscal</td>
-					<td style="text-align:left" th:text="${carga.getDescricao()}">Descrição</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</body>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>ModernLog</li>
+          <li><a href="../../modernlog/entregas/cadastrar">Entrega</a></li>
+          <li><a href="../../modernlog/caminhoes/cadastrar">Caminhão</a></li>
+          <li><a href="../../modernlog/clientes/cadastrar">Cliente</a></li>
+          <li><a href="../../modernlog/cargas/cadastrar">Carga</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Consulta de Carga</h1>
+      <table id="dados">
+        <tr>
+          <th align= "left">Nota Fiscal</th>
+		  <th align= "left">Descrição</th>
+        </tr>
+        <tr th:each="carga : ${listarCargas}">
+			<td style="text-align:left" th:text="${carga.getNotaFiscal()}">Nota Fiscal</td>
+			<td style="text-align:left" th:text="${carga.getDescricao()}">Descrição</td>
+		</tr>
+      </table>
+      <hr />
+      <a href="cadastrar" class="link-retorno">
+        <h4>Clique aqui para cadastrar uma nova carga</h4>
+      </a>
+    </main>
+  </body>
 </html>

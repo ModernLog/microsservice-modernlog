@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>ModernLog - Cadastrar Entrega</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>ModernLog</li>
+          <li>Entrega</li>
+          <li><a href="../../modernlog/caminhoes/cadastrar">Caminhão</a></li>
+          <li><a href="../../modernlog/clientes/cadastrar">Cliente</a></li>
+          <li><a href="../../modernlog/cargas/cadastrar">Carga</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Cadastro de Entrega</h1>
+      <form th:object="${entregaDto}" action="/modernlog/entregas" method="POST">
+      	<label>Data Previsão</label>
+      	<input type="date" th:field="*{dataPrevisao}" required/>
+        <select name="" id="">
+          <!-- Replicar todos os clientes cadastrados -->
+          <option value="">Cliente 1</option>
+        </select>
+        <select name="" id="">
+          <!-- Replicar todos os caminhões cadastrados -->
+          <option value="">Caminhão 1</option>
+        </select>
+        <select name="" id="">
+          <!-- Replicar todos os cargas cadastrados -->
+          <option value="">Carga 1</option>
+        </select>
+        <br />
+        <h3 class="txtEndereco">Endereço para entrega</h3>
+        <div>
+          <input type="text" placeholder="Rua" />
+          <input type="number" placeholder="Numero" />
+          <input type="text" placeholder="Bairro" />
+          <input type="text" placeholder="Complemento" />
+        </div>
+        <div>
+          <input type="text" placeholder="Complemento" />
+          <input type="text" placeholder="Cidade" />
+          <input type="text" placeholder="Estado" />
+        </div>
+        <hr />
+        <div class="button-cadastrar">
+        	<input type="submit" value="Cadastrar Entrega" />
+        </div>
+        <a href="consultar" class="link-retorno">
+			<h4>Clique aqui para consultar as entregas já cadastradas</h4>
+		</a>
+      </form>
+    </main>
+  </body>
+</html>

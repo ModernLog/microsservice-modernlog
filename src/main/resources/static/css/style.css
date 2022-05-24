@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  background: #041e42;
+  color: white;
+}
+
+header nav {
+  width: 100%;
+  padding: 0 60px;
+}
+
+header ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+header ul > a:nth-child(1) {
+  font-size: 26px;
+}
+
+main {
+  margin-top: 50px;
+  width: 90%;
+}
+
+main h1 {
+  margin-bottom: 50px;
+}
+
+main input,
+main select {
+  width: 300px;
+  height: 40px;
+  background: #f1f1f1;
+  border: none;
+  margin: 10px;
+  margin-left: 0;
+  padding: 0 10px;
+}
+
+.txtEndereco {
+  margin: 30px 0;
+}
+
+hr {
+  margin: 50px 0;
+}
+
+.button-cadastrar {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.button-cadastrar input {
+  width: 200px;
+  height: 30px;
+  background: #041e42;
+  color: white;
+  border: none;
+}
+
+nav a:link {
+  color: white;
+}
+
+nav a:visited {
+  color: white;
+}
+
+#dados {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#dados td,
+#dados th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#dados tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#dados tr:hover {
+  background-color: #ddd;
+}
+
+#dados th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #041e42;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link-retorno:visited {
+  color: black;
+}
+
+.link-retorno:link {
+  color: black;
+}
+
+.dt-previsao {
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-carga {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}

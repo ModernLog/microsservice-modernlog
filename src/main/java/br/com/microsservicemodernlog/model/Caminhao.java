@@ -16,16 +16,20 @@ public class Caminhao {
 	@Column(length = 30)
 	private String modelo;
 	
+	@Column(length = 10)
+	private String placa;
+	
 	@Column(length = 4)
 	private Integer ano;
 	
 	public Caminhao() {
 		
 	}
-
-	public Caminhao(Long id, String modelo, int ano) {
+	
+	public Caminhao(Long id, String modelo, String placa, Integer ano) {
 		this.id = id;
 		this.modelo = modelo;
+		this.placa = placa;
 		this.ano = ano;
 	}
 
@@ -37,11 +41,19 @@ public class Caminhao {
 		this.modelo = modelo;
 	}
 
-	public int getAno() {
+	public String getPlaca() {
+		return placa;
+	}
+
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
+
+	public Integer getAno() {
 		return ano;
 	}
 
-	public void setAno(int ano) {
+	public void setAno(Integer ano) {
 		this.ano = ano;
 	}
 }

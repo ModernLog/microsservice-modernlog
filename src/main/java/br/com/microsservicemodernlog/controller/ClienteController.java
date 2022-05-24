@@ -47,7 +47,7 @@ public class ClienteController {
 	@PostMapping
 	public ModelAndView cadastrarCliente(@Valid ClienteDto clienteDto, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-//			return new ModelAndView("carga/cadastrar");
+			return new ModelAndView("cliente/cadastrar");
 		}
 		
 		Cliente consultaCliente = clienteRepository.findByCnpj(clienteDto.getCnpj());
